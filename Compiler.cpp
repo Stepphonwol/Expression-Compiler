@@ -256,18 +256,20 @@ void Compiler::scan()
 				char cur = oprt.top();
 				if (cur == '(') {
 					//oprt.pop();
-					oprt.push(in);
+					//oprt.push(in);
 					break;
 				}
 				bool cmp = prior(in, cur);
 				if (cmp) {
-					oprt.push(in);
+					//oprt.push(in);
 					break;
 				}
 				else {
 					exit_calc();
+					//oprt.push(in);
 				}
 			}
+			oprt.push(in);
 		}
 	}
 	while (oprt.length() != 0) {
